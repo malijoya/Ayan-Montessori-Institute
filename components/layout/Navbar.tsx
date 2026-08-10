@@ -1,13 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, GraduationCap, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  // Track scroll position for header shadow & height transitions
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -16,100 +30,127 @@ export default function Navbar() {
     { name: "Courses", href: "/courses" },
     { name: "Gallery", href: "/gallery" },
     { name: "Testimonials", href: "/testimonials" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
-  const isActive = (path: string) => pathname === path;
+  // Active state matching, ensuring /courses remains active on /courses/[id]
+  const isLinkActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    if (href === "/courses") {
+      return pathname === "/courses" || pathname.startsWith("/courses/");
+    }
+    return pathname === href;
+  };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link 
-          href="/" 
+    <header
+      className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 border-b ${
+        isScrolled
+          ? "shadow-md border-slate-200 py-2.5"
+          : "border-slate-100/80 py-4"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Brand Logo Treatment */}
+        <Link
+          href="/"
           className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#87CEEB] rounded-xl p-1"
+          aria-label="Ayan Montessori Institute Home"
         >
-          <div className="w-11 h-11 rounded-2xl bg-[#87CEEB]/20 border border-[#87CEEB] flex items-center justify-center text-[#2C5F8A] group-hover:bg-[#87CEEB] group-hover:text-white transition-all shadow-sm">
-            <GraduationCap className="w-6 h-6" />
+          <div className="w-11 h-11 rounded-2xl bg-[#87CEEB]/20 border border-[#87CEEB]/60 flex items-center justify-center text-[#2C5F8A] group-hover:bg-[#2C5F8A] group-hover:text-white transition-all shadow-sm">
+            <GraduationCap className="w-6 h-6 transition-transform group-hover:scale-110" />
           </div>
           <div>
-            <span className="font-poppins font-bold text-lg text-[#2C5F8A] block leading-tight">
+            <span className="font-poppins font-bold text-base sm:text-lg text-[#2C5F8A] block leading-tight tracking-tight">
               Ayan Montessori
             </span>
-            <span className="text-xs font-semibold tracking-wider text-slate-500 uppercase block">
-              Institute Architecture
+            <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-[#87CEEB] uppercase block font-poppins">
+              Institute
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`px-3.5 py-2 rounded-full text-sm font-medium transition-all ${
-                isActive(link.href)
-                  ? "bg-[#2C5F8A] text-white shadow-sm font-semibold"
-                  : "text-slate-600 hover:text-[#2C5F8A] hover:bg-slate-100"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+        {/* Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main Navigation">
+          {navLinks.map((link) => {
+            const active = isLinkActive(link.href);
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`px-3.5 py-2 rounded-full text-xs sm:text-sm font-poppins transition-all duration-200 ${
+                  active
+                    ? "bg-[#87CEEB]/20 text-[#2C5F8A] font-bold shadow-xs border border-[#87CEEB]/40"
+                    : "text-slate-700 font-medium hover:text-[#2C5F8A] hover:bg-slate-100/80"
+                }`}
+                aria-current={active ? "page" : undefined}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Desktop Primary CTA Button */}
         <div className="hidden lg:flex items-center gap-3">
           <Link
             href="/contact"
-            className="px-6 py-2.5 rounded-full bg-[#87CEEB] text-[#2C5F8A] font-semibold text-sm hover:bg-[#70BDDF] hover:text-slate-900 transition-all shadow-sm hover:shadow-md flex items-center gap-2 group"
+            className="px-6 py-2.5 rounded-full bg-[#2C5F8A] text-white font-poppins font-bold text-xs sm:text-sm hover:bg-[#87CEEB] hover:text-[#2C5F8A] transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 group cursor-pointer"
+            id="nav-enroll-btn"
           >
             <span>Enroll Now</span>
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile / Tablet Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
-          aria-label="Toggle navigation menu"
+          aria-label="Toggle mobile navigation menu"
           aria-expanded={isOpen}
-          className="lg:hidden p-2.5 rounded-2xl text-slate-700 bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-[#87CEEB]"
+          className="lg:hidden p-2.5 rounded-2xl text-[#2C5F8A] bg-slate-100 hover:bg-[#87CEEB]/20 focus:outline-none focus:ring-2 focus:ring-[#87CEEB] transition-colors cursor-pointer"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile & Tablet Drawer Menu */}
       {isOpen && (
-        <div className="lg:hidden border-b border-slate-200 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-lg animate-in slide-in-from-top duration-200">
+        <div className="lg:hidden border-b border-slate-200 bg-white/98 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-fadeIn">
           <div className="space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`flex items-center justify-between px-4 py-3 rounded-2xl text-base font-medium transition-all ${
-                  isActive(link.href)
-                    ? "bg-[#2C5F8A] text-white font-semibold"
-                    : "text-slate-700 hover:bg-slate-100"
-                }`}
-              >
-                <span>{link.name}</span>
-                <ChevronRight className="w-4 h-4 opacity-50" />
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isLinkActive(link.href);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-poppins font-semibold transition-all ${
+                    active
+                      ? "bg-[#2C5F8A] text-white shadow-md"
+                      : "text-[#2C5F8A] hover:bg-slate-100"
+                  }`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  <span>{link.name}</span>
+                  <ChevronRight className={`w-4 h-4 ${active ? "text-[#FFD166]" : "opacity-40"}`} />
+                </Link>
+              );
+            })}
           </div>
+
+          {/* Mobile CTA */}
           <div className="pt-4 border-t border-slate-100">
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#87CEEB] text-[#2C5F8A] font-bold text-base hover:bg-[#70BDDF] transition-all shadow-md"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#2C5F8A] hover:bg-[#87CEEB] text-white hover:text-[#2C5F8A] font-poppins font-bold text-sm transition-all shadow-md cursor-pointer"
             >
               <span>Enroll Now</span>
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

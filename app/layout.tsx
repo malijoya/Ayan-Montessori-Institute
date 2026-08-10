@@ -17,8 +17,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ayan Montessori Institute | Modern Educational Institute Wireframe",
-  description: "Official Website Architecture & Wireframe Layout for Ayan Montessori Institute.",
+  title: {
+    default: "Ayan Montessori Institute | Nurturing Young Minds & Educator Training",
+    template: "%s | Ayan Montessori Institute",
+  },
+  description:
+    "Official website of Ayan Montessori Institute. Providing authentic Montessori early childhood education, teacher training diplomas, and holistic child development.",
 };
 
 export default function RootLayout({

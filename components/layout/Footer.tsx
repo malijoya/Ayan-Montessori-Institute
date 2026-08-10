@@ -1,149 +1,261 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { GraduationCap, Mail, Phone, MapPin, Send, Share2, Globe, MessageCircle, Tv } from "lucide-react";
+import {
+  GraduationCap,
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  ArrowRight,
+} from "lucide-react";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  YoutubeIcon,
+  LinkedinIcon,
+} from "@/components/ui/SocialIcons";
 
 export default function Footer() {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail.trim() || !newsletterEmail.includes("@")) {
+      setNewsletterStatus("error");
+      return;
+    }
+    setNewsletterStatus("submitting");
+    setTimeout(() => {
+      setNewsletterStatus("success");
+      setNewsletterEmail("");
+    }, 1000);
+  };
+
+  const quickLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Trainers", href: "/trainers" },
+    { name: "Courses", href: "/courses" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
+  const popularCourses = [
+    { name: "Montessori Programme", href: "/courses/1" },
+    { name: "Early Learning", href: "/courses/2" },
+    { name: "Spoken English", href: "/courses/3" },
+    { name: "Arabic Language", href: "/courses/4" },
+    { name: "Quran & Tajweed", href: "/courses/5" },
+    { name: "Computer & IT Basics", href: "/courses/6" },
+    { name: "Arts & Creativity", href: "/courses/7" },
+  ];
+
+  const socialLinks = [
+    {
+      name: "Facebook",
+      icon: FacebookIcon,
+      href: "https://facebook.com",
+    },
+    {
+      name: "Instagram",
+      icon: InstagramIcon,
+      href: "https://instagram.com",
+    },
+    {
+      name: "YouTube",
+      icon: YoutubeIcon,
+      href: "https://youtube.com",
+    },
+    {
+      name: "LinkedIn",
+      icon: LinkedinIcon,
+      href: "https://linkedin.com",
+    },
+  ];
+
   return (
     <footer className="bg-[#2C5F8A] text-white pt-16 pb-8 border-t-4 border-[#87CEEB]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Main 4-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-          
-          {/* Column 1: Institute Information */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-[#87CEEB] text-[#2C5F8A] flex items-center justify-center font-bold">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* COLUMN 1 — ABOUT */}
+          <div className="space-y-5">
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <div className="w-11 h-11 rounded-2xl bg-[#87CEEB] text-[#2C5F8A] flex items-center justify-center font-bold shadow-md group-hover:scale-105 transition-transform">
                 <GraduationCap className="w-6 h-6" />
               </div>
-              <span className="font-poppins font-bold text-xl text-white">
-                Ayan Montessori
-              </span>
-            </div>
-            
-            {/* Institute Overview Wireframe Block */}
-            <div className="wireframe-block rounded-xl p-3 border-dashed border-white/30 bg-white/5 space-y-2 text-xs">
-              <div className="h-2.5 bg-white/20 rounded-full w-full"></div>
-              <div className="h-2.5 bg-white/20 rounded-full w-4/5"></div>
-              <div className="h-2.5 bg-white/20 rounded-full w-2/3"></div>
-            </div>
+              <div>
+                <span className="font-poppins font-bold text-lg text-white block leading-tight">
+                  Ayan Montessori
+                </span>
+                <span className="text-[10px] font-semibold tracking-widest text-[#87CEEB] uppercase block font-poppins">
+                  Institute
+                </span>
+              </div>
+            </Link>
 
-            <div className="space-y-2 text-sm text-slate-200">
-              <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-[#87CEEB] shrink-0" />
-                <span className="wireframe-badge bg-white/10 text-white border-white/20">Location Address Block</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#87CEEB] shrink-0" />
-                <span className="wireframe-badge bg-white/10 text-white border-white/20">+92 (XXX) 000-0000</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#87CEEB] shrink-0" />
-                <span className="wireframe-badge bg-white/10 text-white border-white/20">info@ayanmontessori.edu</span>
+            <p className="text-xs sm:text-sm text-blue-100 leading-relaxed font-inter">
+              A welcoming educational institute focused on helping children learn, explore, develop confidence, and build strong foundations for the future.
+            </p>
+
+            {/* Social Media Links */}
+            <div className="space-y-2 pt-2">
+              <span className="text-xs font-poppins font-semibold text-[#87CEEB] uppercase tracking-wider block">
+                Follow Our Journey
+              </span>
+              <div className="flex items-center gap-2">
+                {socialLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Follow Ayan Montessori Institute on ${item.name}`}
+                      className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#FFD166] hover:text-slate-900 text-white border border-white/15 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 shadow-sm"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* COLUMN 2 — QUICK LINKS */}
           <div className="space-y-4">
-            <h3 className="font-poppins font-semibold text-lg text-[#87CEEB] border-b border-[#87CEEB]/30 pb-2">
+            <h3 className="font-poppins font-bold text-base text-[#87CEEB] border-b border-[#87CEEB]/30 pb-2">
               Quick Links
             </h3>
-            <ul className="space-y-2.5 text-sm text-slate-200">
-              {["Home", "About Us", "Trainers", "Courses", "Gallery", "Testimonials", "Contact Us"].map((link) => (
-                <li key={link}>
-                  <Link 
-                    href={link === "Home" ? "/" : link === "About Us" ? "/about" : `/${link.toLowerCase().replace(/\s+/g, '')}`}
-                    className="hover:text-[#87CEEB] transition-colors flex items-center gap-2 group"
+            <ul className="space-y-2.5 text-xs sm:text-sm font-inter">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-blue-100 hover:text-[#FFD166] transition-colors flex items-center gap-2 group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD166] group-hover:w-3 transition-all"></span>
-                    <span>{link}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB] group-hover:w-2.5 group-hover:bg-[#FFD166] transition-all" />
+                    <span>{link.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Courses */}
+          {/* COLUMN 3 — POPULAR COURSES */}
           <div className="space-y-4">
-            <h3 className="font-poppins font-semibold text-lg text-[#87CEEB] border-b border-[#87CEEB]/30 pb-2">
-              Courses
+            <h3 className="font-poppins font-bold text-base text-[#87CEEB] border-b border-[#87CEEB]/30 pb-2">
+              Popular Courses
             </h3>
-            <ul className="space-y-2.5 text-sm text-slate-200">
-              {[
-                "Montessori Teacher Training",
-                "Early Childhood Education",
-                "Child Psychology & Care",
-                "Elementary Pedagogy",
-                "Special Needs Education",
-              ].map((course, idx) => (
-                <li key={course}>
-                  <Link 
-                    href={`/courses/${idx + 1}`}
-                    className="hover:text-[#87CEEB] transition-colors flex items-center gap-2 group"
+            <ul className="space-y-2.5 text-xs sm:text-sm font-inter">
+              {popularCourses.map((course) => (
+                <li key={course.name}>
+                  <Link
+                    href={course.href}
+                    className="text-blue-100 hover:text-[#FFD166] transition-colors flex items-center gap-2 group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB] group-hover:w-3 transition-all"></span>
-                    <span>{course}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB] group-hover:w-2.5 group-hover:bg-[#FFD166] transition-all" />
+                    <span>{course.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 4: Newsletter + Social Media */}
-          <div className="space-y-4">
-            <h3 className="font-poppins font-semibold text-lg text-[#87CEEB] border-b border-[#87CEEB]/30 pb-2">
-              Newsletter & Socials
+          {/* COLUMN 4 — CONTACT & NEWSLETTER */}
+          <div className="space-y-5">
+            <h3 className="font-poppins font-bold text-base text-[#87CEEB] border-b border-[#87CEEB]/30 pb-2">
+              Contact Us
             </h3>
-            <p className="text-xs text-slate-200">
-              Subscribe to stay updated with course offerings & events.
-            </p>
-            
-            {/* Newsletter Input */}
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-2">
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="Enter email address"
-                  className="w-full bg-white/10 text-white placeholder-slate-300 border border-white/20 rounded-full px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#87CEEB] pr-10"
-                />
-                <button
-                  type="submit"
-                  aria-label="Subscribe"
-                  className="absolute right-1 top-1 text-[#2C5F8A] bg-[#FFD166] hover:bg-[#F8C346] w-8 h-8 rounded-full flex items-center justify-center transition-all"
-                >
-                  <Send className="w-4 h-4" />
-                </button>
+
+            {/* Editable Contact Info */}
+            <div className="space-y-2.5 text-xs text-blue-100 font-inter">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#FFD166] shrink-0 mt-0.5" />
+                <span>Plot 42, Educational Sector, H-8/4, Islamabad, Pakistan</span>
               </div>
-            </form>
-
-            {/* Social Media Links Wireframe */}
-            <div className="pt-2">
-              <span className="text-xs font-semibold text-slate-300 block mb-2">Follow Us</span>
-              <div className="flex items-center gap-2">
-                {[Globe, Share2, MessageCircle, Tv].map((Icon, i) => (
-                  <div 
-                    key={i} 
-                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#87CEEB] hover:text-[#2C5F8A] border border-white/20 flex items-center justify-center transition-all cursor-pointer"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </div>
-                ))}
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#FFD166] shrink-0" />
+                <span>+92 (300) 123-4567 / +92 (51) 876-5432</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#FFD166] shrink-0" />
+                <span>info@ayanmontessori.edu.pk</span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <Clock className="w-4 h-4 text-[#FFD166] shrink-0 mt-0.5" />
+                <span>Mon – Fri: 8:00 AM – 4:00 PM | Sat: 9:00 AM – 2:00 PM</span>
               </div>
             </div>
-          </div>
 
+            {/* NEWSLETTER SUBSCRIPTION */}
+            <div className="pt-3 border-t border-white/10 space-y-3">
+              <div>
+                <h4 className="font-poppins font-bold text-xs text-[#FFD166]">
+                  Stay Updated
+                </h4>
+                <p className="text-[11px] text-blue-200 mt-0.5">
+                  Subscribe to receive updates about courses, activities, and announcements.
+                </p>
+              </div>
+
+              {newsletterStatus === "success" ? (
+                <div className="p-3 rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-xs flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Thank you for subscribing!</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="space-y-2">
+                  <div className="relative">
+                    <input
+                      type="email"
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      className="w-full bg-white/10 text-white placeholder-blue-200 border border-white/20 rounded-full px-4 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#87CEEB] pr-10"
+                      aria-label="Email address for newsletter"
+                    />
+                    <button
+                      type="submit"
+                      disabled={newsletterStatus === "submitting"}
+                      aria-label="Subscribe to newsletter"
+                      className="absolute right-1 top-1 bg-[#FFD166] hover:bg-yellow-300 text-slate-900 w-7 h-7 rounded-full flex items-center justify-center transition-all cursor-pointer"
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                  {newsletterStatus === "error" && (
+                    <p className="text-[10px] text-rose-300 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" />
+                      Please enter a valid email address.
+                    </p>
+                  )}
+                </form>
+              )}
+            </div>
+          </div>
         </div>
 
-        {/* Bottom Copyright Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-300">
-          <div>
-            © {new Date().getFullYear()} Ayan Montessori Institute. All Rights Reserved. Architecture Wireframe.
-          </div>
+        {/* FOOTER BOTTOM BAR */}
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-200 font-inter text-center sm:text-left">
+          <p>© 2026 Ayan Montessori Institute. All Rights Reserved.</p>
           <div className="flex items-center gap-6">
-            <span className="hover:underline cursor-pointer">Privacy Policy</span>
-            <span className="hover:underline cursor-pointer">Terms of Service</span>
-            <span className="hover:underline cursor-pointer">Sitemap</span>
+            <Link href="/contact" className="hover:text-[#FFD166] transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/contact" className="hover:text-[#FFD166] transition-colors">
+              Terms &amp; Conditions
+            </Link>
           </div>
         </div>
       </div>
