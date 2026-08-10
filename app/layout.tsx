@@ -31,7 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${poppins.variable} ${inter.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col font-sans bg-white text-slate-800">
         <Navbar />
         <main className="flex-1">{children}</main>
