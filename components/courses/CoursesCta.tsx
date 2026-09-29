@@ -14,16 +14,16 @@ export default function CoursesCta() {
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-[#87CEEB] border border-white/20 text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Next Batch Starting Soon</span>
+            <span>Admissions Open</span>
           </div>
 
           <h2 className="font-poppins font-extrabold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-            Ready to Begin Your Child's{" "}
-            <span className="text-[#FFD166]">Learning Journey?</span>
+            Ready to Begin Your{" "}
+            <span className="text-[#FFD166]">Teaching Journey?</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-sans max-w-xl">
-            Seats are limited in every batch to ensure personalised attention for each child. Secure your child's place today and begin a transformative Montessori experience at Ayan Montessori Institute.
+          <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-montserrat max-w-xl">
+            Seats are limited in every batch. Secure your place today and train with Pakistan&apos;s most trusted name in Montessori teacher training.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -52,8 +52,8 @@ export default function CoursesCta() {
         <div className="lg:col-span-5">
           <div className="relative rounded-3xl overflow-hidden shadow-montessori-lg border-4 border-white/20 bg-white/10 backdrop-blur-md p-4">
             <img
-              src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop"
-              alt="Children learning cheerfully at Ayan Montessori"
+              src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop"
+              alt="Trainees in a Montessori workshop"
               className="w-full h-[320px] sm:h-[360px] object-cover rounded-2xl"
             />
             <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white shadow-xl flex items-center gap-3">
@@ -61,8 +61,8 @@ export default function CoursesCta() {
                 ✓
               </div>
               <div>
-                <span className="font-poppins font-bold text-xs text-[#2C5F8A] block">Enrolment Guarantee</span>
-                <span className="text-[11px] text-slate-600">Free trial class · No advance payment required</span>
+                <span className="font-poppins font-bold text-xs text-[#2C5F8A] block">100% Job-Oriented Programs</span>
+                <span className="text-[11px] text-slate-600">Career support for every graduate</span>
               </div>
             </div>
           </div>

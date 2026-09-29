@@ -70,33 +70,33 @@ export default function CourseDetailsClient({
   const highlights = [
     {
       icon: <Layers className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Hands-on Learning",
-      description: "Direct practical engagement with authentic Montessori learning apparatus.",
+      title: "Practical, Job-Oriented Training",
+      description: "Skills you can take straight into the classroom, not just theory.",
     },
     {
       icon: <Activity className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Interactive Activities",
-      description: "Group discussions, role-playing presentations, and practical lab exercises.",
+      title: "Interactive Learning",
+      description: "Discussions, demonstrations, and practical exercises that keep learning active.",
     },
     {
       icon: <Award className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Qualified Teachers",
-      description: "Mentorship by AMI-certified senior trainers with 10+ years of experience.",
+      title: "Expert Trainers",
+      description: "Learn from AYAN's experienced trainers, backed by more than a decade of teacher training.",
     },
     {
       icon: <School className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Modern Classrooms",
-      description: "State-of-the-art prepared environments equipped with full material sets.",
+      title: "Flexible Learning Modes",
+      description: "On-campus, hybrid, live on Zoom, and self-paced options to fit your schedule.",
     },
     {
       icon: <FileCheck className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Practical Assessments",
-      description: "Continuous observation, portfolio building, and oral presentation evaluation.",
+      title: "Continuous Assessment",
+      description: "Regular assignments and feedback so you always know your progress.",
     },
     {
       icon: <UserCheck className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Small Class Sizes",
-      description: "Limited batch seats ensuring individual attention and one-on-one guidance.",
+      title: "Career Support",
+      description: "Active teaching vacancies shared across our school network.",
     },
   ];
 
@@ -212,8 +212,8 @@ export default function CourseDetailsClient({
                   <ShieldCheck className="w-5 h-5 text-[#2C5F8A]" />
                 </div>
                 <div>
-                  <h4 className="font-poppins font-bold text-xs text-[#2C5F8A]">AMI Aligned Standard</h4>
-                  <p className="text-[11px] text-slate-500">Official Montessori pedagogy</p>
+                  <h4 className="font-poppins font-bold text-xs text-[#2C5F8A]">Established in 2010</h4>
+                  <p className="text-[11px] text-slate-500">Pakistan&apos;s trusted Montessori trainers</p>
                 </div>
               </div>
 
@@ -253,7 +253,7 @@ export default function CourseDetailsClient({
               </div>
               <div className="absolute -bottom-4 -right-4 bg-[#2C5F8A] text-white p-4 rounded-2xl shadow-lg font-poppins font-bold text-xs text-center">
                 <span className="block text-xl text-[#FFD166]">100%</span>
-                Child-Centred
+                Job-Oriented
               </div>
             </div>
 
@@ -327,7 +327,7 @@ export default function CourseDetailsClient({
               What Students Will Learn
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              Our holistic methodology fosters essential life skills and technical capabilities across six core domains.
+              The core skills and competencies you will develop by the end of this course.
             </p>
           </div>
 
@@ -452,7 +452,7 @@ export default function CourseDetailsClient({
               Meet Your Trainer
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              Learn directly from certified Montessori experts with years of hands-on classroom leadership.
+              Learn directly from AYAN Montessori Institute&apos;s experienced trainers.
             </p>
           </div>
 
@@ -461,19 +461,25 @@ export default function CourseDetailsClient({
               
               {/* Photo */}
               <div className="md:col-span-4 relative h-64 md:h-80 w-full rounded-2xl overflow-hidden shadow-lg border-2 border-[#87CEEB]">
-                <Image
-                  src={course.trainer.photo}
-                  alt={course.trainer.name}
-                  fill
-                  className="object-cover"
-                />
+                {course.trainer.photo ? (
+                  <Image
+                    src={course.trainer.photo}
+                    alt={course.trainer.name}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#87CEEB]/40 to-[#2C5F8A]/20 flex items-center justify-center">
+                    <GraduationCap className="w-20 h-20 text-[#2C5F8A]" aria-hidden="true" />
+                  </div>
+                )}
               </div>
 
               {/* Bio Details */}
               <div className="md:col-span-8 space-y-4">
                 <div>
                   <span className="inline-block bg-[#87CEEB]/20 text-[#2C5F8A] text-xs font-semibold px-3 py-1 rounded-full mb-1">
-                    {course.trainer.experience} Experience
+                    {course.trainer.experience}
                   </span>
                   <h3 className="font-poppins font-bold text-2xl text-[#2C5F8A]">
                     {course.trainer.name}

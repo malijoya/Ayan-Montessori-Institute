@@ -18,21 +18,21 @@ const defaultReviews: ReviewItem[] = [
     role: "Montessori Teacher Diploma Trainee",
     rating: 5,
     photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
-    review: "This diploma completely transformed my teaching career! The 100+ hours of practical lab presentations gave me real confidence. The instructors at Ayan Montessori Institute are extremely supportive.",
+    review: "This diploma completely transformed my teaching career! The practical apparatus lab sessions gave me real confidence. The trainers at Ayan Montessori Institute are extremely supportive.",
   },
   {
     name: "Muhammad Usman",
-    role: "Parent of Preschool Student",
+    role: "Online Diploma Graduate",
     rating: 5,
     photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-    review: "Enrolling my daughter in this programme was the best decision. Her language and problem-solving skills have skyrocketed. The child-friendly, structured environment is truly world-class.",
+    review: "Joining the live Zoom classes from home was the best decision. The trainers made every session interactive, and I now feel fully prepared to run my own Montessori classroom.",
   },
   {
     name: "Zainab Fatima",
-    role: "ECCE Certified Caregiver",
+    role: "Montessori / ECE Certificate Graduate",
     rating: 5,
     photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
-    review: "The curriculum is AMI-aligned and structured brilliantly. I gained hands-on expertise in early child development that helped me secure a senior teacher position immediately after graduation.",
+    review: "The course was structured brilliantly and easy to follow at my own pace. It gave me a strong foundation in early childhood education and helped me secure a teaching position.",
   },
 ];
 

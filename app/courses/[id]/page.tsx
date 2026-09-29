@@ -9,8 +9,7 @@ interface CoursePageProps {
 
 export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const numericId = parseInt(resolvedParams.id, 10) || 1;
-  const course = getCourse(numericId) || getCourse(1);
+  const course = getCourse(parseInt(resolvedParams.id, 10));
 
   if (!course) {
     return {
@@ -26,10 +25,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
 
 export default async function CourseDetailsPage({ params }: CoursePageProps) {
   const resolvedParams = await params;
-  const numericId = parseInt(resolvedParams.id, 10) || 1;
-  
-  // Resolve course data dynamically
-  const course = getCourse(numericId) || getCourse(1);
+  const course = getCourse(parseInt(resolvedParams.id, 10));
 
   if (!course) {
     notFound();

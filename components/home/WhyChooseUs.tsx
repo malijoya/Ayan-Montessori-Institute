@@ -1,43 +1,43 @@
 import SectionContainer from "@/components/ui/SectionContainer";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { UserCheck, ShieldCheck, Sparkles, Puzzle, Users, Lightbulb } from "lucide-react";
+import { GraduationCap, Puzzle, Globe, ClipboardList, Briefcase, CalendarClock } from "lucide-react";
 
 export default function WhyChooseUs() {
   const features = [
     {
-      icon: UserCheck,
-      title: "Qualified Teachers",
-      description: "Certified Montessori master educators dedicated to nurturing each child's unique pace and intellectual potential.",
+      icon: GraduationCap,
+      title: "Expert Master Trainers",
+      description: "Learn directly from seasoned, internationally accredited master trainers with credentials from AMI (Holland) and MACTE. Receive personalized mentorship throughout your learning journey.",
       color: "bg-[#87CEEB]/20 text-[#2C5F8A] border-[#87CEEB]/40",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Safe Learning Environment",
-      description: "Child-proof spaces with non-toxic wooden apparatus, rounded furniture, and 24/7 security monitoring.",
-      color: "bg-[#FFD166]/30 text-[#8F6500] border-[#FFD166]",
-    },
-    {
-      icon: Sparkles,
-      title: "Interactive Learning",
-      description: "Hands-on Montessori sensory materials that turn abstract math, reading, and science into tangible discovery.",
-      color: "bg-[#2C5F8A]/10 text-[#2C5F8A] border-[#2C5F8A]/30",
     },
     {
       icon: Puzzle,
-      title: "Montessori Activities",
-      description: "Structured practical life activities that instill concentration, independence, self-discipline, and motor mastery.",
+      title: "Hands-On Apparatus Labs",
+      description: "Train in fully equipped, real-world Montessori apparatus labs. Build authentic practical skills and classroom confidence before you graduate.",
       color: "bg-[#FFD166]/30 text-[#8F6500] border-[#FFD166]",
     },
     {
-      icon: Users,
-      title: "Small Class Sizes",
-      description: "Low student-to-teacher ratios ensuring customized individual attention and close observation for every student.",
+      icon: Globe,
+      title: "Internationally Aligned Curriculum",
+      description: "Master early childhood pedagogy with a comprehensive curriculum designed to meet global standards and modern educational practices.",
+      color: "bg-[#2C5F8A]/10 text-[#2C5F8A] border-[#2C5F8A]/30",
+    },
+    {
+      icon: ClipboardList,
+      title: "Practical Classroom Management",
+      description: "Go beyond theory with specialized modules on child psychology, lesson planning, observation techniques, and effective classroom design.",
+      color: "bg-[#FFD166]/30 text-[#8F6500] border-[#FFD166]",
+    },
+    {
+      icon: Briefcase,
+      title: "Career & Job Placement Support",
+      description: "Earn a 100% job-oriented credential recognized by premier schools. We continuously source and share active teaching vacancies across our network to give you a direct head start in your career.",
       color: "bg-[#87CEEB]/20 text-[#2C5F8A] border-[#87CEEB]/40",
     },
     {
-      icon: Lightbulb,
-      title: "Modern Teaching Methods",
-      description: "Blending classic Maria Montessori philosophy with modern early childhood cognitive development research.",
+      icon: CalendarClock,
+      title: "Flexible Professional Learning",
+      description: "Designed for working professionals, career switchers, and full-time students with flexible weekday, weekend, and workshop schedules.",
       color: "bg-[#2C5F8A]/10 text-[#2C5F8A] border-[#2C5F8A]/30",
     },
   ];
@@ -46,8 +46,8 @@ export default function WhyChooseUs() {
     <SectionContainer bg="surface">
       <SectionHeader
         badge="Core Strengths"
-        title="Why Parents Choose Us"
-        subtitle="Nurturing young minds through world-class Montessori pedagogy, dedicated care, and inspiring environments."
+        title="Why Choose Ayan Montessori Institute?"
+        subtitle="For over 17 years, we’ve empowered 10,000+ teachers and partnered with top schools nationwide. Our programs feature elite trainers certified by AMI (Holland) and MACTE to set the gold standard in Montessori education."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-slate-600 leading-relaxed font-sans">
+                <p className="text-sm text-slate-600 leading-relaxed font-montserrat">
                   {feature.description}
                 </p>
               </div>

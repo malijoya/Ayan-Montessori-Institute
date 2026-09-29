@@ -193,7 +193,7 @@ export default function ContactPageClient() {
                     <p className="text-slate-400 text-xs mt-0.5">{card.subtitle}</p>
                   </div>
 
-                  <div className="space-y-1 text-xs text-slate-600 font-inter">
+                  <div className="space-y-1 text-xs text-slate-600 font-montserrat">
                     {card.lines.map((line, idx) => (
                       <p key={idx}>{line}</p>
                     ))}
@@ -262,7 +262,7 @@ export default function ContactPageClient() {
                       </div>
                     </div>
 
-                    <div className="pt-2 border-t border-slate-50 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-inter text-slate-600">
+                    <div className="pt-2 border-t border-slate-50 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-montserrat text-slate-600">
                       <div>
                         <span className="font-semibold text-slate-400 block text-[10px] uppercase">
                           Email
@@ -416,7 +416,7 @@ export default function ContactPageClient() {
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed font-inter border-t border-slate-50 animate-fadeIn">
+                    <div className="px-5 pb-5 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed font-montserrat border-t border-slate-50 animate-fadeIn">
                       {faq.answer}
                     </div>
                   )}

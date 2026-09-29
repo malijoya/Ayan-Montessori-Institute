@@ -234,7 +234,7 @@ export default function TestimonialsPageClient() {
                 <div className="font-poppins font-extrabold text-3xl md:text-4xl text-[#2C5F8A]">
                   <AnimatedCounter end={stat.numericEnd} suffix={stat.suffix} />
                 </div>
-                <p className="text-slate-600 font-inter text-xs md:text-sm font-semibold uppercase tracking-wider">
+                <p className="text-slate-600 font-montserrat text-xs md:text-sm font-semibold uppercase tracking-wider">
                   {stat.label}
                 </p>
               </div>
@@ -279,7 +279,7 @@ export default function TestimonialsPageClient() {
               {/* Content */}
               <div className="flex-1 space-y-4 text-center md:text-left">
                 <Quote className="w-8 h-8 text-[#FFD166] fill-[#FFD166] mx-auto md:mx-0" />
-                <blockquote className="text-slate-700 text-sm md:text-base leading-relaxed italic font-inter">
+                <blockquote className="text-slate-700 text-sm md:text-base leading-relaxed italic font-montserrat">
                   &ldquo;{featuredTestimonial.review}&rdquo;
                 </blockquote>
                 <div>
@@ -337,7 +337,7 @@ export default function TestimonialsPageClient() {
       <section className="py-10 md:py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredParent.length === 0 ? (
-            <div className="text-center py-20 text-slate-400 font-inter">
+            <div className="text-center py-20 text-slate-400 font-montserrat">
               No parent reviews in this category.
             </div>
           ) : (
@@ -394,7 +394,7 @@ export default function TestimonialsPageClient() {
                           />
                         </div>
                         <StarRating rating={st.rating} size="sm" />
-                        <blockquote className="text-slate-700 text-sm md:text-base italic leading-relaxed font-inter">
+                        <blockquote className="text-slate-700 text-sm md:text-base italic leading-relaxed font-montserrat">
                           &ldquo;{st.review}&rdquo;
                         </blockquote>
                         <div>
@@ -545,7 +545,7 @@ export default function TestimonialsPageClient() {
                     <p className="font-poppins font-bold text-[#2C5F8A] text-base">{story.studentName}</p>
                     <p className="text-xs text-slate-400">{story.courseOrClass}</p>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed flex-1 font-inter line-clamp-4">
+                  <p className="text-slate-600 text-sm leading-relaxed flex-1 font-montserrat line-clamp-4">
                     {story.story}
                   </p>
                   <button
@@ -682,7 +682,7 @@ function ParentCard({ testimonial: t }: { testimonial: Testimonial }) {
         </div>
 
         {/* Review */}
-        <blockquote className="text-slate-600 text-sm leading-relaxed font-inter flex-1 italic line-clamp-5">
+        <blockquote className="text-slate-600 text-sm leading-relaxed font-montserrat flex-1 italic line-clamp-5">
           &ldquo;{t.review}&rdquo;
         </blockquote>
 

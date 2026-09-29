@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Site typography: Montserrat for body/paragraph text, Poppins for headings & buttons */
+@theme inline {
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer base {
   :root {
     --primary: #87CEEB;
@@ -21,14 +26,27 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     color: var(--foreground);
     background: var(--background);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6,
+  button,
+  input[type="submit"],
+  input[type="button"],
+  a[class*="rounded-full"] {
     font-family: var(--font-poppins), sans-serif;
   }
+}
+
+/* Font family utilities */
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 /* Floating Animations for Hero Elements */

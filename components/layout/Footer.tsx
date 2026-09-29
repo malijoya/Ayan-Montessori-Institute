@@ -50,13 +50,12 @@ export default function Footer() {
   ];
 
   const popularCourses = [
-    { name: "Montessori Programme", href: "/courses/1" },
-    { name: "Early Learning", href: "/courses/2" },
-    { name: "Spoken English", href: "/courses/3" },
-    { name: "Arabic Language", href: "/courses/4" },
-    { name: "Quran & Tajweed", href: "/courses/5" },
-    { name: "Computer & IT Basics", href: "/courses/6" },
-    { name: "Arts & Creativity", href: "/courses/7" },
+    { name: "6-Month Montessori Diploma", href: "/courses/1" },
+    { name: "Online Montessori Diploma", href: "/courses/2" },
+    { name: "1-Year Montessori Diploma", href: "/courses/3" },
+    { name: "Montessori / ECE Certificate", href: "/courses/4" },
+    { name: "Spoken English", href: "/courses/5" },
+    { name: "Phonics Workshops", href: "/courses/6" },
   ];
 
   const socialLinks = [
@@ -103,7 +102,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-xs sm:text-sm text-blue-100 leading-relaxed font-inter">
+            <p className="text-xs sm:text-sm text-blue-100 leading-relaxed font-montserrat">
               A welcoming educational institute focused on helping children learn, explore, develop confidence, and build strong foundations for the future.
             </p>
 
@@ -137,7 +136,7 @@ export default function Footer() {
             <h3 className="font-poppins font-bold text-base text-[#87CEEB] border-b border-[#87CEEB]/30 pb-2">
               Quick Links
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm font-inter">
+            <ul className="space-y-2.5 text-xs sm:text-sm font-montserrat">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -157,7 +156,7 @@ export default function Footer() {
             <h3 className="font-poppins font-bold text-base text-[#87CEEB] border-b border-[#87CEEB]/30 pb-2">
               Popular Courses
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm font-inter">
+            <ul className="space-y-2.5 text-xs sm:text-sm font-montserrat">
               {popularCourses.map((course) => (
                 <li key={course.name}>
                   <Link
@@ -179,7 +178,7 @@ export default function Footer() {
             </h3>
 
             {/* Editable Contact Info */}
-            <div className="space-y-2.5 text-xs text-blue-100 font-inter">
+            <div className="space-y-2.5 text-xs text-blue-100 font-montserrat">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#FFD166] shrink-0 mt-0.5" />
                 <span>Plot 42, Educational Sector, H-8/4, Islamabad, Pakistan</span>
@@ -247,7 +246,7 @@ export default function Footer() {
         </div>
 
         {/* FOOTER BOTTOM BAR */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-200 font-inter text-center sm:text-left">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-200 font-montserrat text-center sm:text-left">
           <p>© 2026 Ayan Montessori Institute. All Rights Reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/contact" className="hover:text-[#FFD166] transition-colors">

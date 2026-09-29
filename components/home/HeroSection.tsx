@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Sparkles, ArrowRight, BookOpen, Star, GraduationCap, Award, CheckCircle2 } from "lucide-react";
+import { Sparkles, ArrowRight, Star, GraduationCap, Award, CheckCircle2, Users, Briefcase } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -25,13 +25,13 @@ export default function HeroSection() {
             </div>
 
             {/* Large Main Heading */}
-            <h1 className="font-poppins font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2C5F8A] tracking-tight leading-[1.15]">
-              Building <span className="text-[#2C5F8A] underline decoration-[#FFD166] decoration-wavy decoration-4">Bright Minds</span> for a Better Tomorrow
+            <h1 className="font-poppins font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] text-[#2C5F8A] tracking-tight leading-[1.2]">
+              Pakistan&apos;s <span className="text-[#2C5F8A] underline decoration-[#FFD166] decoration-wavy decoration-4 underline-offset-4">Most Trusted Name</span> in Montessori Teacher Training — Established in 2010
             </h1>
 
             {/* Short Description */}
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-sans">
-              At Ayan Montessori Institute, we foster curiosity, creativity, and independence through certified child-centered Montessori education. We empower young learners and aspiring educators to discover their full potential in a safe, inspiring environment.
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-montserrat">
+              For over a decade, AYAN Montessori Institute has been shaping the educators who shape young minds. With AMI &amp; MACTE-certified trainers, internationally recognized curricula, and a legacy of excellence, we don&apos;t just teach the Montessori method — we set the standard for it in Pakistan.
             </p>
 
             {/* CTA Buttons */}
@@ -56,15 +56,15 @@ export default function HeroSection() {
             <div className="pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-semibold text-slate-700">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#87CEEB] shrink-0" />
-                <span>Certified Montessori</span>
+                <span>Online Live at Zoom</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#87CEEB] shrink-0" />
-                <span>100% Practical Labs</span>
+                <span>On-Campus Classes</span>
               </div>
               <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
                 <CheckCircle2 className="w-4 h-4 text-[#87CEEB] shrink-0" />
-                <span>Global Diplomas</span>
+                <span>In-House Training Programs</span>
               </div>
             </div>
 
@@ -108,35 +108,43 @@ export default function HeroSection() {
 
               {/* FLOATING DECORATIVE BADGES */}
               
-              {/* Floating Badge 1: Top Left - Books & Knowledge */}
+              {/* Floating Badge 1: Top Left - Master Trainers */}
               <div className="absolute -top-5 -left-5 bg-white p-3 rounded-2xl shadow-montessori border border-slate-100 flex items-center gap-3 animate-float-slow z-20">
                 <div className="w-10 h-10 rounded-xl bg-[#87CEEB]/30 text-[#2C5F8A] flex items-center justify-center">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs font-bold text-[#2C5F8A] block">Interactive Books</span>
-                  <span className="text-[10px] text-slate-500">Phonics & Early Math</span>
-                </div>
-              </div>
-
-              {/* Floating Badge 2: Right Middle - 5 Star Rating */}
-              <div className="absolute top-1/3 -right-6 bg-white p-3 rounded-2xl shadow-montessori border border-slate-100 hidden sm:flex items-center gap-2.5 animate-float-medium z-20">
-                <div className="flex text-[#FFD166]">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                  ))}
-                </div>
-                <span className="text-xs font-bold text-[#2C5F8A]">4.9/5 Rating</span>
-              </div>
-
-              {/* Floating Badge 3: Bottom Left - Graduation Cap */}
-              <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-2xl shadow-montessori border border-slate-100 flex items-center gap-3 animate-float-medium z-20">
-                <div className="w-10 h-10 rounded-xl bg-[#FFD166]/40 text-[#8F6500] flex items-center justify-center">
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-[#2C5F8A] block">Teacher Diplomas</span>
-                  <span className="text-[10px] text-slate-500">98% Placement Rate</span>
+                  <span className="text-xs font-bold text-[#2C5F8A] block">AMI &amp; MACTE Master Trainers</span>
+                  <span className="text-[10px] text-slate-500">World-Class Mentorship</span>
+                </div>
+              </div>
+
+              {/* Floating Badge 2: Right Middle - Educators Trained */}
+              <div className="absolute top-1/3 -right-6 bg-white p-3 rounded-2xl shadow-montessori border border-slate-100 hidden sm:flex items-center gap-3 animate-float-medium z-20">
+                <div className="w-10 h-10 rounded-xl bg-[#2C5F8A]/10 text-[#2C5F8A] flex items-center justify-center">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-[#2C5F8A] block">10,000+ Educators Trained</span>
+                  <span className="flex items-center gap-1 text-[10px] text-slate-500">
+                    <span className="flex text-[#FFD166]" aria-label="5 star rating">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 fill-current" />
+                      ))}
+                    </span>
+                    Rated Training
+                  </span>
+                </div>
+              </div>
+
+              {/* Floating Badge 3: Bottom Left - Job-Oriented Diplomas */}
+              <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-2xl shadow-montessori border border-slate-100 flex items-center gap-3 animate-float-medium z-20">
+                <div className="w-10 h-10 rounded-xl bg-[#FFD166]/40 text-[#8F6500] flex items-center justify-center">
+                  <Briefcase className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-[#2C5F8A] block">100% Job-Oriented Diplomas</span>
+                  <span className="text-[10px] text-slate-500">Real-Time Career Updates</span>
                 </div>
               </div>
 

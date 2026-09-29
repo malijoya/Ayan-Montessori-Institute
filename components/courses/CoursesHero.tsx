@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Sparkles, ArrowRight, BookOpen, GraduationCap, Star, Pencil } from "lucide-react";
+import { courses } from "@/lib/courseData";
+import { Sparkles, ArrowRight, BookOpen, GraduationCap, Monitor } from "lucide-react";
 
 export default function CoursesHero() {
   return (
@@ -20,14 +21,14 @@ export default function CoursesHero() {
             </div>
 
             <h1 className="font-poppins font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2C5F8A] tracking-tight leading-[1.15]">
-              Discover the Right Course for Every{" "}
+              Find the Right Program for Your{" "}
               <span className="underline decoration-[#FFD166] decoration-wavy decoration-4">
-                Stage of Learning
+                Teaching Career
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-sans">
-              From our authentic Montessori early learning programmes to specialist teacher training diplomas, every course at Ayan Montessori Institute is crafted to inspire curiosity, build confidence, and lay strong academic foundations.
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-montserrat">
+              From 6-month and 1-year Montessori teacher training diplomas to self-paced certificates, phonics workshops, and spoken English — every program at AYAN Montessori Institute is designed to build real, job-ready teaching skills.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -43,9 +44,9 @@ export default function CoursesHero() {
             {/* Quick Stats */}
             <div className="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4">
               {[
-                { val: "12+", label: "Programmes" },
-                { val: "6", label: "Categories" },
-                { val: "500+", label: "Graduates" },
+                { val: String(courses.length), label: "Programs" },
+                { val: "10,000+", label: "Educators Trained" },
+                { val: "2010", label: "Established" },
               ].map((s) => (
                 <div key={s.label} className="text-center sm:text-left">
                   <div className="font-poppins font-extrabold text-2xl text-[#2C5F8A]">{s.val}</div>
@@ -62,8 +63,8 @@ export default function CoursesHero() {
 
               <div className="relative rounded-3xl overflow-hidden shadow-montessori-lg border-4 border-white bg-white group">
                 <img
-                  src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200&auto=format&fit=crop"
-                  alt="Children Learning Together at Ayan Montessori"
+                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1200&auto=format&fit=crop"
+                  alt="Trainees in a Montessori teacher training session"
                   className="w-full h-[380px] sm:h-[460px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2C5F8A]/40 via-transparent to-transparent"></div>
@@ -74,7 +75,7 @@ export default function CoursesHero() {
                   </div>
                   <div>
                     <span className="text-xs font-bold text-[#2C5F8A] block">Expert-Led Programmes</span>
-                    <span className="text-[11px] text-slate-500">Certified Montessori methodology</span>
+                    <span className="text-[11px] text-slate-500">AMI &amp; MACTE master trainers</span>
                   </div>
                 </div>
               </div>
@@ -85,19 +86,19 @@ export default function CoursesHero() {
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-[#2C5F8A] block">12+ Courses</span>
-                  <span className="text-[10px] text-slate-500">All age groups covered</span>
+                  <span className="text-xs font-bold text-[#2C5F8A] block">{courses.length} Programs</span>
+                  <span className="text-[10px] text-slate-500">Diplomas, certificates &amp; skills</span>
                 </div>
               </div>
 
               {/* Floating Badge 2 */}
               <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-2xl shadow-montessori border border-slate-100 flex items-center gap-3 animate-float-medium z-20">
                 <div className="w-10 h-10 rounded-xl bg-[#FFD166]/40 text-[#8F6500] flex items-center justify-center">
-                  <Star className="w-5 h-5 fill-current" />
+                  <Monitor className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-[#2C5F8A] block">4.9 / 5 Rating</span>
-                  <span className="text-[10px] text-slate-500">Parent satisfaction</span>
+                  <span className="text-xs font-bold text-[#2C5F8A] block">On-Campus &amp; Online</span>
+                  <span className="text-[10px] text-slate-500">Hybrid, Zoom &amp; self-paced</span>
                 </div>
               </div>
             </div>

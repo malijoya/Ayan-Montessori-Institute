@@ -1,155 +1,60 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import SectionContainer from "@/components/ui/SectionContainer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Clock, Users, ArrowRight, BarChart3 } from "lucide-react";
+import { courses, type CourseProgramType } from "@/lib/courseData";
+import CourseSearchFilter, { emptyCourseFilters, type CourseFilters } from "./CourseSearchFilter";
+
+const badgeColors: Record<CourseProgramType, string> = {
+  diplomas: "bg-[#87CEEB]/20 text-[#2C5F8A]",
+  short: "bg-[#FFD166]/30 text-[#8F6500]",
+  skills: "bg-[#2C5F8A]/10 text-[#2C5F8A]",
+};
 
 export default function AllCoursesGrid() {
-  const courses = [
-    {
-      id: 4,
-      title: "Montessori Foundation Programme",
-      description: "Introductory Montessori immersion for toddlers covering sensorial exploration, practical life, and early language.",
-      ageGroup: "Ages 2.5–4",
-      duration: "3 Months",
-      level: "Foundation",
-      category: "Early Learning",
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#87CEEB]/20 text-[#2C5F8A]",
-    },
-    {
-      id: 5,
-      title: "Preschool Programme",
-      description: "Full-day Montessori preschool experience developing cognitive, social, and motor skills through structured play.",
-      ageGroup: "Ages 3–5",
-      duration: "1 Year",
-      level: "Beginner",
-      category: "Early Learning",
-      image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#87CEEB]/20 text-[#2C5F8A]",
-    },
-    {
-      id: 6,
-      title: "Kindergarten Level",
-      description: "Structured Montessori kindergarten preparing children for formal schooling with advanced pre-literacy and numeracy.",
-      ageGroup: "Ages 5–6",
-      duration: "1 Year",
-      level: "Intermediate",
-      category: "Early Learning",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#87CEEB]/20 text-[#2C5F8A]",
-    },
-    {
-      id: 7,
-      title: "Spoken English for Kids",
-      description: "Interactive conversational English sessions using stories, drama, phonics, and engaging multimedia activities.",
-      ageGroup: "Ages 4–10",
-      duration: "3 Months",
-      level: "Beginner–Advanced",
-      category: "Language Courses",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#FFD166]/30 text-[#8F6500]",
-    },
-    {
-      id: 8,
-      title: "Arabic Language Course",
-      description: "Foundation Arabic reading, writing, and conversation skills for young learners in a supportive classroom.",
-      ageGroup: "Ages 5–12",
-      duration: "4 Months",
-      level: "Beginner",
-      category: "Language Courses",
-      image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#FFD166]/30 text-[#8F6500]",
-    },
-    {
-      id: 9,
-      title: "Quran with Tajweed",
-      description: "Systematic Quran recitation with correct Tajweed rules guided by qualified teachers in a peaceful setting.",
-      ageGroup: "Ages 5–14",
-      duration: "6 Months",
-      level: "All Levels",
-      category: "Islamic Studies",
-      image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#2C5F8A]/10 text-[#2C5F8A]",
-    },
-    {
-      id: 10,
-      title: "Computer Basics for Kids",
-      description: "Child-friendly introduction to computers, typing, internet safety, presentations, and basic applications.",
-      ageGroup: "Ages 6–12",
-      duration: "6 Weeks",
-      level: "Beginner",
-      category: "Technology",
-      image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#87CEEB]/20 text-[#2C5F8A]",
-    },
-    {
-      id: 11,
-      title: "IT Course — Coding & Web",
-      description: "Hands-on introduction to block coding, Scratch programming, and beginner HTML/CSS for digital natives.",
-      ageGroup: "Ages 8–14",
-      duration: "3 Months",
-      level: "Intermediate",
-      category: "Technology",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#87CEEB]/20 text-[#2C5F8A]",
-    },
-    {
-      id: 12,
-      title: "Robotics for Kids",
-      description: "LEGO-based and sensor robotics workshops developing logical thinking, teamwork, and engineering fundamentals.",
-      ageGroup: "Ages 7–13",
-      duration: "6 Weeks",
-      level: "Beginner–Intermediate",
-      category: "STEM Education",
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#FFD166]/30 text-[#8F6500]",
-    },
-    {
-      id: 13,
-      title: "Creative Arts & Craft",
-      description: "Expressive fine arts programme covering painting, clay modelling, collage, and seasonal creative projects.",
-      ageGroup: "Ages 3–10",
-      duration: "4 Weeks",
-      level: "All Levels",
-      category: "Arts & Creativity",
-      image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#2C5F8A]/10 text-[#2C5F8A]",
-    },
-    {
-      id: 14,
-      title: "Mathematics Skills Booster",
-      description: "Abacus-based and Montessori golden bead math enrichment to sharpen arithmetic, pattern recognition, and problem-solving.",
-      ageGroup: "Ages 5–10",
-      duration: "6 Weeks",
-      level: "Intermediate",
-      category: "STEM Education",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#FFD166]/30 text-[#8F6500]",
-    },
-    {
-      id: 15,
-      title: "Science Exploration Club",
-      description: "Fun lab-based science experiments in chemistry, physics, biology, and environmental science for young explorers.",
-      ageGroup: "Ages 6–12",
-      duration: "6 Weeks",
-      level: "All Levels",
-      category: "STEM Education",
-      image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop",
-      badge: "bg-[#87CEEB]/20 text-[#2C5F8A]",
-    },
-  ];
+  const [filters, setFilters] = useState<CourseFilters>(emptyCourseFilters);
 
+  const query = filters.search.trim().toLowerCase();
+  const visibleCourses = courses.filter(
+    (course) =>
+      (!filters.category || course.programType === filters.category) &&
+      (!filters.mode || course.mode === filters.mode) &&
+      (!filters.duration || course.duration === filters.duration) &&
+      (!query ||
+        [course.title, course.badge, course.category, course.shortDescription, course.format]
+          .join(" ")
+          .toLowerCase()
+          .includes(query))
+  );
   return (
-    <SectionContainer bg="white">
+    <SectionContainer bg="white" id="all-courses">
       <SectionHeader
         badge="Complete Catalogue"
         title="All Courses & Programmes"
-        subtitle="Browse our full range of academic and enrichment programmes for every child and aspiring educator."
+        subtitle="Browse our full range of Montessori diplomas, certificate courses, workshops, and professional skills programmes."
         align="left"
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {courses.map((course) => (
+      <CourseSearchFilter filters={filters} onChange={setFilters} resultCount={visibleCourses.length} />
+
+      {visibleCourses.length === 0 && (
+        <div className="text-center py-12 bg-slate-50 rounded-3xl border border-slate-100">
+          <p className="text-sm text-slate-600">No courses match your filters.</p>
+          <button
+            type="button"
+            onClick={() => setFilters(emptyCourseFilters)}
+            className="mt-4 px-5 py-2.5 rounded-full bg-[#2C5F8A] text-white text-xs font-bold hover:bg-[#224B6E] transition-all cursor-pointer"
+          >
+            Reset Filters
+          </button>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {visibleCourses.map((course) => (
           <div
             key={course.id}
             className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-montessori hover:shadow-montessori-lg hover:-translate-y-2 transition-all duration-300 group flex flex-col"
@@ -162,8 +67,8 @@ export default function AllCoursesGrid() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-3 left-3 flex gap-1.5">
-                <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${course.badge}`}>
-                  {course.category}
+                <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${badgeColors[course.programType]}`}>
+                  {course.badge}
                 </span>
               </div>
             </div>
@@ -173,8 +78,8 @@ export default function AllCoursesGrid() {
               <h3 className="font-poppins font-bold text-base text-[#2C5F8A] group-hover:text-[#87CEEB] transition-colors leading-snug line-clamp-2">
                 {course.title}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-sans line-clamp-2">
-                {course.description}
+              <p className="text-xs text-slate-600 leading-relaxed font-montserrat line-clamp-2">
+                {course.shortDescription}
               </p>
 
               {/* Meta */}

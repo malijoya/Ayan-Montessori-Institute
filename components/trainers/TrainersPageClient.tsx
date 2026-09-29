@@ -13,15 +13,14 @@ import {
   ArrowRight,
   Sparkles,
   Brain,
-  MessageCircle,
-  Compass,
-  Palette,
-  Laptop,
+  Puzzle,
+  ClipboardList,
+  Monitor,
   BookOpen,
+  Mic,
   Briefcase,
   Quote,
   ShieldCheck,
-  Star,
   Layers,
 } from "lucide-react";
 import { LinkedinIcon, TwitterIcon } from "@/components/ui/SocialIcons";
@@ -44,23 +43,23 @@ export default function TrainersPageClient() {
   const whyFeatures = [
     {
       icon: <Award className="w-5 h-5 text-[#2C5F8A]" />,
-      title: "Qualified & Experienced",
-      description: "Certified AMI & ECCE specialists with decades of combined classroom leadership.",
+      title: "Experienced Master Trainers",
+      description: "Trainers backed by AYAN's legacy of teacher training since 2010.",
     },
     {
       icon: <HeartHandshake className="w-5 h-5 text-[#2C5F8A]" />,
-      title: "Child-Centred Approach",
-      description: "Respecting every child's individual pace, interests, and developmental milestones.",
+      title: "Practical, Job-Oriented Training",
+      description: "Hands-on apparatus work and classroom skills you can use from day one.",
     },
     {
       icon: <Users className="w-5 h-5 text-[#2C5F8A]" />,
-      title: "Individual Attention",
-      description: "Maintaining small cohort ratios to ensure one-on-one guidance for every trainee.",
+      title: "Personal Mentorship",
+      description: "Guidance and feedback for every trainee throughout their learning journey.",
     },
     {
       icon: <Sparkles className="w-5 h-5 text-[#2C5F8A]" />,
-      title: "Passion for Teaching",
-      description: "Dedicated educators who ignite curiosity, confidence, and a lifelong love of learning.",
+      title: "On-Campus & Online",
+      description: "Learn in person, in hybrid batches, or live on Zoom from anywhere.",
     },
   ];
 
@@ -68,43 +67,43 @@ export default function TrainersPageClient() {
   const expertiseCards = [
     {
       icon: <Layers className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Montessori Education",
-      description: "Authentic 3–6 and toddler pedagogy covering all 5 core curriculum areas.",
+      title: "Montessori Philosophy",
+      description: "The Montessori method, the prepared environment, and the role of the teacher.",
+    },
+    {
+      icon: <Puzzle className="w-6 h-6 text-[#2C5F8A]" />,
+      title: "Apparatus Handling",
+      description: "Practical life, sensorial, language, and mathematics apparatus presentations.",
     },
     {
       icon: <Brain className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Early Childhood Development",
-      description: "Infant and toddler neuroscience, milestone tracking, and responsive care.",
+      title: "Child Psychology",
+      description: "Early childhood development, behaviour, and supporting diverse learners.",
     },
     {
-      icon: <MessageCircle className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Language Development",
-      description: "Multi-sensory phonics, vocabulary enrichment, and conversational English.",
-    },
-    {
-      icon: <Compass className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Mathematics",
-      description: "Concrete math apparatus: Golden Beads, Stamp Game, and decimal concepts.",
-    },
-    {
-      icon: <Sparkles className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Science & Discovery",
-      description: "Botany, zoology, geography, and hands-on laboratory exploration.",
-    },
-    {
-      icon: <Palette className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Arts & Creativity",
-      description: "Fine motor craft, expressive arts, and music & movement activities.",
-    },
-    {
-      icon: <Laptop className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Technology",
-      description: "Kid robotics, visual block coding, and basic digital literacy for young minds.",
+      icon: <ClipboardList className="w-6 h-6 text-[#2C5F8A]" />,
+      title: "Classroom Management",
+      description: "Lesson planning, observation techniques, and effective classroom design.",
     },
     {
       icon: <BookOpen className="w-6 h-6 text-[#2C5F8A]" />,
-      title: "Islamic Studies",
-      description: "Tajweed foundations, age-appropriate Islamic values, and character development.",
+      title: "English & Urdu Phonics",
+      description: "Proven early reading techniques for English and Urdu classrooms.",
+    },
+    {
+      icon: <Mic className="w-6 h-6 text-[#2C5F8A]" />,
+      title: "Spoken English",
+      description: "Fluency and classroom communication for teachers and professionals.",
+    },
+    {
+      icon: <Monitor className="w-6 h-6 text-[#2C5F8A]" />,
+      title: "Live Online Teaching",
+      description: "Interactive Zoom classrooms for learners anywhere in Pakistan or abroad.",
+    },
+    {
+      icon: <Briefcase className="w-6 h-6 text-[#2C5F8A]" />,
+      title: "Career Readiness",
+      description: "Job-oriented training with teaching vacancies shared across our network.",
     },
   ];
 
@@ -135,11 +134,11 @@ export default function TrainersPageClient() {
               </span>
 
               <h1 className="font-poppins font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#2C5F8A] leading-tight">
-                Learn From Experienced and Caring Educators
+                Learn From Pakistan&apos;s Trusted Montessori Trainers
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                At Ayan Montessori Institute, our faculty comprises passionate, AMI-certified educators and ECCE specialists dedicated to helping every child learn, explore, and reach their full potential in a warm and nurturing environment.
+                Since 2010, AYAN Montessori Institute has trained more than 10,000 educators. Our trainers guide you through Montessori philosophy, hands-on apparatus practice, and real classroom skills — on campus, in hybrid batches, or live on Zoom.
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
@@ -155,16 +154,16 @@ export default function TrainersPageClient() {
               {/* Quick Highlights */}
               <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/60 max-w-lg mx-auto lg:mx-0">
                 <div>
-                  <strong className="font-poppins font-extrabold text-xl sm:text-2xl text-[#2C5F8A] block">15+</strong>
-                  <span className="text-xs text-slate-500 font-medium">Years Experience</span>
+                  <strong className="font-poppins font-extrabold text-xl sm:text-2xl text-[#2C5F8A] block">2010</strong>
+                  <span className="text-xs text-slate-500 font-medium">Established</span>
                 </div>
                 <div>
-                  <strong className="font-poppins font-extrabold text-xl sm:text-2xl text-[#2C5F8A] block">100%</strong>
-                  <span className="text-xs text-slate-500 font-medium">AMI Standards</span>
+                  <strong className="font-poppins font-extrabold text-xl sm:text-2xl text-[#2C5F8A] block">AMI &amp; MACTE</strong>
+                  <span className="text-xs text-slate-500 font-medium">Certified Trainers</span>
                 </div>
                 <div>
-                  <strong className="font-poppins font-extrabold text-xl sm:text-2xl text-[#2C5F8A] block">500+</strong>
-                  <span className="text-xs text-slate-500 font-medium">Graduates Trained</span>
+                  <strong className="font-poppins font-extrabold text-xl sm:text-2xl text-[#2C5F8A] block">10,000+</strong>
+                  <span className="text-xs text-slate-500 font-medium">Educators Trained</span>
                 </div>
               </div>
             </div>
@@ -173,8 +172,8 @@ export default function TrainersPageClient() {
             <div className="lg:col-span-5 relative">
               <div className="relative h-80 sm:h-96 lg:h-[460px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop"
-                  alt="Teacher interacting with Montessori children"
+                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1000&auto=format&fit=crop"
+                  alt="Trainees in a teacher training session"
                   fill
                   className="object-cover"
                   priority
@@ -188,8 +187,8 @@ export default function TrainersPageClient() {
                   <ShieldCheck className="w-5 h-5 text-[#2C5F8A]" />
                 </div>
                 <div>
-                  <h4 className="font-poppins font-bold text-xs text-[#2C5F8A]">Certified Master Faculty</h4>
-                  <p className="text-[11px] text-slate-500">AMI & ECCE Practitioner Mentors</p>
+                  <h4 className="font-poppins font-bold text-xs text-[#2C5F8A]">AMI &amp; MACTE Master Trainers</h4>
+                  <p className="text-[11px] text-slate-500">World-Class Mentorship</p>
                 </div>
               </div>
 
@@ -199,8 +198,8 @@ export default function TrainersPageClient() {
                   <HeartHandshake className="w-5 h-5 text-[#2C5F8A]" />
                 </div>
                 <div>
-                  <h4 className="font-poppins font-bold text-xs text-[#2C5F8A]">Warm & Supportive</h4>
-                  <p className="text-[11px] text-slate-500">Child-centred guidance</p>
+                  <h4 className="font-poppins font-bold text-xs text-[#2C5F8A]">Warm &amp; Supportive</h4>
+                  <p className="text-[11px] text-slate-500">Guidance at every step</p>
                 </div>
               </div>
             </div>
@@ -220,16 +219,16 @@ export default function TrainersPageClient() {
             <div className="lg:col-span-5 relative">
               <div className="relative h-96 lg:h-[480px] w-full rounded-3xl overflow-hidden shadow-xl border border-slate-100">
                 <Image
-                  src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000&auto=format&fit=crop"
-                  alt="Classroom teacher guidance"
+                  src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1000&auto=format&fit=crop"
+                  alt="Trainer guiding a group workshop"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-[#2C5F8A] text-white p-4 rounded-2xl shadow-lg font-poppins font-bold text-xs text-center">
-                <span className="block text-xl text-[#FFD166]">1:10</span>
-                Max Student Ratio
+                <span className="block text-xl text-[#FFD166]">10,000+</span>
+                Educators Trained
               </div>
             </div>
 
@@ -240,12 +239,12 @@ export default function TrainersPageClient() {
                   Dedicated Excellence
                 </span>
                 <h2 className="font-poppins font-bold text-2xl sm:text-3xl lg:text-4xl text-[#2C5F8A] mt-1">
-                  Teachers Who Inspire, Guide and Support
+                  Trainers Who Inspire, Guide and Support
                 </h2>
               </div>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Great education starts with extraordinary teachers. Our faculty members are not just instructors—they are compassionate mentors who understand child psychology, create safe learning environments, and inspire a lifelong passion for discovery.
+                Great teachers are shaped by great trainers. Our faculty are not just instructors — they are mentors who help every trainee master the Montessori method, build classroom confidence, and step into a rewarding teaching career.
               </p>
 
               {/* 4 Feature Points Grid */}
@@ -283,7 +282,7 @@ export default function TrainersPageClient() {
               Faculty Directory
             </span>
             <h2 className="font-poppins font-bold text-2xl sm:text-3xl lg:text-4xl text-[#2C5F8A]">
-              Meet Our Certified Master Educators
+              Meet Our Trainers
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
               Click &quot;View Profile&quot; on any faculty card to explore their full qualifications, biography, and courses taught.
@@ -300,13 +299,19 @@ export default function TrainersPageClient() {
                 <div>
                   {/* Photo & Badge */}
                   <div className="relative h-64 w-full overflow-hidden">
-                    <Image
-                      src={tr.photo}
-                      alt={tr.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+                    {tr.photo ? (
+                      <Image
+                        src={tr.photo}
+                        alt={tr.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#87CEEB]/40 to-[#2C5F8A]/20 flex items-center justify-center">
+                        <GraduationCap className="w-20 h-20 text-[#2C5F8A]" aria-hidden="true" />
+                      </div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
                     
                     <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-[#2C5F8A] text-[10px] font-poppins font-bold px-3 py-1 rounded-full shadow-xs">
@@ -395,7 +400,7 @@ export default function TrainersPageClient() {
               Our Areas of Expertise
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              Our faculty covers eight core domain specialisations aligned with international AMI and early childhood standards.
+              The core areas our trainers cover across our diplomas, certificate courses, workshops, and skills programmes.
             </p>
           </div>
 
@@ -439,7 +444,7 @@ export default function TrainersPageClient() {
               </div>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                At Ayan Montessori Institute, our educational philosophy is rooted in the Maria Montessori principle: &ldquo;Help me to do it by myself.&rdquo; Our trainers guide children to discover their intrinsic motivation through six foundational pillars:
+                At Ayan Montessori Institute, our educational philosophy is rooted in the Maria Montessori principle: &ldquo;Help me to do it by myself.&rdquo; Our trainers prepare educators to nurture six foundational qualities in every child:
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -463,8 +468,8 @@ export default function TrainersPageClient() {
             <div className="lg:col-span-5 relative">
               <div className="relative h-80 sm:h-96 lg:h-[420px] w-full rounded-3xl overflow-hidden shadow-xl border border-slate-100">
                 <Image
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop"
-                  alt="Classroom learning environment"
+                  src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1000&auto=format&fit=crop"
+                  alt="Teacher training lecture"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -487,30 +492,22 @@ export default function TrainersPageClient() {
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 items-center relative z-10">
               <div className="sm:col-span-4 flex justify-center">
                 <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image
-                    src={trainers[0].photo}
-                    alt={trainers[0].name}
-                    fill
-                    className="object-cover"
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#87CEEB]/50 to-[#2C5F8A]/30 flex items-center justify-center">
+                    <GraduationCap className="w-16 h-16 text-[#2C5F8A]" aria-hidden="true" />
+                  </div>
                 </div>
               </div>
 
               <div className="sm:col-span-8 space-y-4 text-center sm:text-left">
-                <div className="flex items-center justify-center sm:justify-start gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-[#FFD166] fill-[#FFD166]" />
-                  ))}
-                </div>
                 <blockquote className="font-poppins font-medium text-base sm:text-lg text-[#2C5F8A] italic leading-relaxed">
-                  &ldquo;When you give a child the freedom to explore with purposeful Montessori materials, learning is no longer a task—it becomes a joyful lifelong habit.&rdquo;
+                  &ldquo;The greatest sign of success for a teacher is to be able to say, &lsquo;The children are now working as if I did not exist.&rsquo;&rdquo;
                 </blockquote>
                 <div>
                   <h4 className="font-poppins font-bold text-lg text-[#2C5F8A]">
-                    {trainers[0].name}
+                    Dr. Maria Montessori
                   </h4>
                   <p className="text-xs text-slate-600 font-medium">
-                    {trainers[0].title}
+                    Founder of the Montessori Method
                   </p>
                 </div>
               </div>
@@ -534,7 +531,7 @@ export default function TrainersPageClient() {
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Are you a certified Montessori educator or early childhood specialist passionate about mentoring the next generation? We invite qualified trainers to join the academic faculty at Ayan Montessori Institute.
+            Are you a certified Montessori trainer or early childhood specialist passionate about mentoring the next generation of teachers? We invite qualified trainers to join the faculty at Ayan Montessori Institute.
           </p>
 
           <button
@@ -558,11 +555,11 @@ export default function TrainersPageClient() {
           </span>
 
           <h2 className="font-poppins font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white">
-            Give Your Child the Right Guidance
+            Start Your Montessori Teaching Career
           </h2>
 
           <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
-            Explore our accredited teacher training diplomas and child learning programs taught by certified master educators.
+            Explore our Montessori teacher training diplomas, certificate courses, and professional skills programs — on campus, hybrid, or live on Zoom.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">

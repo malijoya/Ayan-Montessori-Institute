@@ -107,7 +107,7 @@ export default function NotFound() {
             Oops! This Page Seems to Have <span className="text-[#FFD166]">Wandered Off</span>
           </h1>
 
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-inter">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-montserrat">
             The page you are looking for might have been moved, renamed, or doesn&apos;t exist anymore. Don&apos;t worry — let&apos;s get you right back on track!
           </p>
         </div>

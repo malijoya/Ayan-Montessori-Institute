@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, GraduationCap, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,20 +57,17 @@ export default function Navbar() {
         {/* Brand Logo Treatment */}
         <Link
           href="/"
-          className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#87CEEB] rounded-xl p-1"
+          className="flex items-center focus:outline-none focus:ring-2 focus:ring-[#87CEEB] rounded-xl p-1"
           aria-label="Ayan Montessori Institute Home"
         >
-          <div className="w-11 h-11 rounded-2xl bg-[#87CEEB]/20 border border-[#87CEEB]/60 flex items-center justify-center text-[#2C5F8A] group-hover:bg-[#2C5F8A] group-hover:text-white transition-all shadow-sm">
-            <GraduationCap className="w-6 h-6 transition-transform group-hover:scale-110" />
-          </div>
-          <div>
-            <span className="font-poppins font-bold text-base sm:text-lg text-[#2C5F8A] block leading-tight tracking-tight">
-              Ayan Montessori
-            </span>
-            <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-[#87CEEB] uppercase block font-poppins">
-              Institute
-            </span>
-          </div>
+          <Image
+            src="/images/logo.png"
+            alt="Ayan Montessori Institute"
+            width={196}
+            height={195}
+            priority
+            className={`w-auto transition-all duration-300 ${isScrolled ? "h-12" : "h-14"}`}
+          />
         </Link>
 
         {/* Desktop Navigation Links */}

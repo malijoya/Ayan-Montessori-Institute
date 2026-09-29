@@ -8,25 +8,25 @@ export default function EnrolmentProcess() {
       step: "01",
       icon: Search,
       title: "Choose Course",
-      description: "Browse our full course catalogue and select the programme that best fits your child's age, interests, and goals.",
+      description: "Browse our full course catalogue and choose the program and learning mode that best fit your goals and schedule.",
     },
     {
       step: "02",
       icon: FileText,
       title: "Submit Application",
-      description: "Complete our simple online or in-person application form with your child's basic information and preferred batch.",
+      description: "Contact our admissions team or send an enquiry with your details and preferred course.",
     },
     {
       step: "03",
       icon: ClipboardCheck,
       title: "Admission Review",
-      description: "Our admissions team reviews your application and contacts you to schedule a welcome orientation session.",
+      description: "Admissions confirms your intake, timings, and fees, and completes your registration.",
     },
     {
       step: "04",
       icon: GraduationCap,
       title: "Start Learning",
-      description: "Join your batch on the start date and embark on a transformative educational journey with Ayan Montessori.",
+      description: "Join your batch — on campus, hybrid, on Zoom, or self-paced — and begin your teaching journey.",
     },
   ];
 
@@ -35,7 +35,7 @@ export default function EnrolmentProcess() {
       <SectionHeader
         badge="Simple Steps"
         title="Enrolment Process"
-        subtitle="Getting started is easy. Follow these four simple steps to secure your child's place at Ayan Montessori Institute."
+        subtitle="Getting started is easy. Follow these four simple steps to secure your place at AYAN Montessori Institute."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
@@ -62,7 +62,7 @@ export default function EnrolmentProcess() {
               <h3 className="font-poppins font-bold text-lg text-[#2C5F8A] group-hover:text-[#2C5F8A]">
                 {step.title}
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed font-sans">
+              <p className="text-sm text-slate-600 leading-relaxed font-montserrat">
                 {step.description}
               </p>
             </div>

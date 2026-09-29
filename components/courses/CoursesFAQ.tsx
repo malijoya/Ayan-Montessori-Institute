@@ -8,34 +8,34 @@ import { ChevronDown, HelpCircle } from "lucide-react";
 export default function CoursesFAQ() {
   const faqs = [
     {
-      question: "Which age groups are accepted at Ayan Montessori Institute?",
+      question: "Who can join AYAN Montessori Institute's courses?",
       answer:
-        "We welcome children from as young as 2.5 years through to age 14 across our various programmes. Our Montessori early learning programmes cater to ages 2.5–6, while our enrichment and specialised courses accept children up to age 14. Our educator diploma programmes are open to adults of all ages.",
+        "Our programs are designed for adults — aspiring Montessori teachers, working teachers and teaching assistants, career switchers, parents, and professionals. No prior Montessori experience is required for our diplomas or certificate course.",
     },
     {
-      question: "How do I enrol my child in a course?",
+      question: "Which learning modes are available?",
       answer:
-        "Enrolment is simple. Browse our course catalogue, select your preferred programme, and either visit our campus or submit your application online. Our admissions team will contact you within 48 hours to confirm your child's place and schedule an orientation session.",
+        "Depending on the course, you can study on campus, in hybrid batches (on-campus plus online), live on Zoom, or fully self-paced. Each course page lists its learning mode.",
     },
     {
-      question: "Are certificates provided upon course completion?",
+      question: "What is the difference between the 6-month and 1-year diplomas?",
       answer:
-        "Yes. All students who complete a programme receive an official Ayan Montessori Institute certificate of completion. Diploma-level teacher training graduates receive an internationally recognised Montessori teaching diploma accredited by our academic board.",
+        "The 6-month diploma covers core Montessori philosophy, apparatus handling, and classroom management. The 1-year diploma goes further, with extensive practical lab work, child psychology, and classroom leadership.",
     },
     {
-      question: "Can parents visit the campus before enrolment?",
+      question: "Are certificates provided on completion?",
       answer:
-        "Absolutely! We encourage all parents to schedule a guided campus tour before enrolling. You can explore our classrooms, meet our teaching staff, and observe our Montessori environment in action. Tours are available Monday through Saturday by appointment.",
+        "Yes. Diploma graduates receive an AYAN Montessori Institute diploma, and certificate course, workshop, and Spoken English participants receive a certificate on successful completion.",
     },
     {
-      question: "Are trial or demo classes available?",
+      question: "How do I enrol?",
       answer:
-        "Yes, we offer a complimentary one-day trial session for new students. This helps children settle in comfortably and allows parents to assess whether the programme is the right fit before making a full commitment.",
+        "Choose your course, then contact our admissions team or submit an enquiry through the Contact page. Admissions will confirm the next intake, timings, and fees.",
     },
     {
-      question: "What teaching methodology is used at Ayan Montessori?",
+      question: "Do you help graduates find teaching jobs?",
       answer:
-        "We follow the authentic Maria Montessori pedagogical framework, which centres on child-led learning, hands-on materials, freedom within structured boundaries, and individualised progression. Our classrooms are carefully prepared environments that promote independence, concentration, and joyful discovery.",
+        "Yes. Our programs are job-oriented, and we continuously source and share active teaching vacancies across our school network with our graduates.",
     },
   ];
 
@@ -46,7 +46,7 @@ export default function CoursesFAQ() {
       <SectionHeader
         badge="Common Questions"
         title="Frequently Asked Questions"
-        subtitle="Everything parents need to know about our programmes, enrolment process, and classroom experience."
+        subtitle="Everything you need to know about our programs, learning modes, and enrolment."
       />
 
       <div className="max-w-4xl mx-auto space-y-4">
@@ -79,7 +79,7 @@ export default function CoursesFAQ() {
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
               >
                 <div className="px-6 pb-6 pt-1 border-t border-slate-100 bg-slate-50/50">
-                  <p className="text-sm text-slate-600 leading-relaxed font-sans pl-11">
+                  <p className="text-sm text-slate-600 leading-relaxed font-montserrat pl-11">
                     {faq.answer}
                   </p>
                 </div>

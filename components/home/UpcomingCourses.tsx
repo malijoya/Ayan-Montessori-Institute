@@ -2,44 +2,18 @@ import Link from "next/link";
 import SectionContainer from "@/components/ui/SectionContainer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Calendar, Clock, Users, ArrowRight, CheckCircle } from "lucide-react";
+import { courses } from "@/lib/courseData";
 
 export default function UpcomingCourses() {
-  const upcomingBatches = [
-    {
-      id: 1,
-      title: "Montessori Teacher Diploma — Batch 24",
-      startDate: "Sept 15, 2026",
-      duration: "6 Months (Weekend Batch)",
-      availableSeats: "5 Seats Left",
-      schedule: "Sat & Sun (10:00 AM - 1:00 PM)",
-      badge: "High Demand",
-    },
-    {
-      id: 2,
-      title: "Early Childhood Care & Education — Batch 18",
-      startDate: "Oct 01, 2026",
-      duration: "3 Months (Weekday Evening)",
-      availableSeats: "8 Seats Left",
-      schedule: "Mon & Wed (4:00 PM - 6:30 PM)",
-      badge: "Filling Fast",
-    },
-    {
-      id: 3,
-      title: "Sensorial & Language Masterclass",
-      startDate: "Nov 10, 2026",
-      duration: "6 Weeks (Intensive)",
-      availableSeats: "4 Seats Left",
-      schedule: "Friday Only (2:00 PM - 6:00 PM)",
-      badge: "Limited Intake",
-    },
-  ];
+  // No fixed start dates are published — each intake shows "Admissions Open" and directs to admissions
+  const upcomingBatches = courses.filter((course) => course.programType === "diplomas");
 
   return (
     <SectionContainer bg="primary-light">
       <SectionHeader
         badge="Enrollment Windows"
         title="Upcoming Course Batches"
-        subtitle="Reserve your seat in our next official diploma or certificate cohort."
+        subtitle="Admissions are open for our Montessori teacher training diplomas. Reserve your seat in the next intake."
       />
 
       <div className="space-y-4 max-w-5xl mx-auto">
@@ -52,11 +26,14 @@ export default function UpcomingCourses() {
             <div className="space-y-3 flex-1">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#FFD166]/40 text-[#8F6500]">
+                  Admissions Open
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#87CEEB]/20 text-[#2C5F8A]">
                   {batch.badge}
                 </span>
                 <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5 text-[#2C5F8A]" />
-                  Starts: <strong className="text-[#2C5F8A]">{batch.startDate}</strong>
+                  Next intake: <strong className="text-[#2C5F8A]">Contact admissions for dates</strong>
                 </span>
               </div>
 
@@ -71,7 +48,7 @@ export default function UpcomingCourses() {
                 </div>
                 <div className="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-100">
                   <CheckCircle className="w-4 h-4 text-[#2C5F8A]" />
-                  <span>{batch.schedule}</span>
+                  <span>{batch.format}</span>
                 </div>
               </div>
             </div>
@@ -82,7 +59,7 @@ export default function UpcomingCourses() {
                 <span className="text-[11px] uppercase font-bold text-slate-400 block">Availability</span>
                 <span className="text-xs font-extrabold text-[#2C5F8A] bg-[#87CEEB]/20 px-3 py-1 rounded-full inline-block mt-0.5">
                   <Users className="w-3 h-3 inline mr-1" />
-                  {batch.availableSeats}
+                  Limited Seats
                 </span>
               </div>
 

@@ -49,13 +49,19 @@ export default function TrainerProfileModal({
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             {/* Trainer Large Photo */}
             <div className="md:col-span-5 relative h-64 md:h-72 w-full rounded-2xl overflow-hidden shadow-lg border-2 border-[#87CEEB]">
-              <Image
-                src={trainer.photo}
-                alt={trainer.name}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 40vw"
-              />
+              {trainer.photo ? (
+                <Image
+                  src={trainer.photo}
+                  alt={trainer.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-[#87CEEB]/40 to-[#2C5F8A]/20 flex items-center justify-center">
+                  <GraduationCap className="w-20 h-20 text-[#2C5F8A]" aria-hidden="true" />
+                </div>
+              )}
             </div>
 
             {/* Basic Info */}
@@ -133,15 +139,17 @@ export default function TrainerProfileModal({
           </div>
 
           {/* Teaching Philosophy */}
-          <div className="bg-[#87CEEB]/10 p-4 rounded-2xl border-l-4 border-[#87CEEB] space-y-1">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#2C5F8A]">
-              <HeartHandshake className="w-4 h-4" />
-              <span>Teaching Philosophy</span>
+          {trainer.teachingPhilosophy && (
+            <div className="bg-[#87CEEB]/10 p-4 rounded-2xl border-l-4 border-[#87CEEB] space-y-1">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#2C5F8A]">
+                <HeartHandshake className="w-4 h-4" />
+                <span>Teaching Philosophy</span>
+              </div>
+              <p className="text-xs sm:text-sm italic text-slate-700 leading-relaxed">
+                &ldquo;{trainer.teachingPhilosophy}&rdquo;
+              </p>
             </div>
-            <p className="text-xs sm:text-sm italic text-slate-700 leading-relaxed">
-              &ldquo;{trainer.teachingPhilosophy}&rdquo;
-            </p>
-          </div>
+          )}
 
           {/* Courses Taught */}
           <div className="space-y-2">

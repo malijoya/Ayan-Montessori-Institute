@@ -1,5 +1,4 @@
 import CoursesHero from "@/components/courses/CoursesHero";
-import CourseSearchFilter from "@/components/courses/CourseSearchFilter";
 import FeaturedCoursesSection from "@/components/courses/FeaturedCoursesSection";
 import AllCoursesGrid from "@/components/courses/AllCoursesGrid";
 import CourseCategories from "@/components/courses/CourseCategories";
@@ -14,28 +13,25 @@ export default function CoursesPage() {
       {/* 1. HERO SECTION */}
       <CoursesHero />
 
-      {/* 2. COURSE SEARCH & FILTER */}
-      <CourseSearchFilter />
-
-      {/* 3. FEATURED COURSES */}
+      {/* 2. FEATURED COURSES */}
       <FeaturedCoursesSection />
 
-      {/* 4. ALL COURSES GRID */}
+      {/* 3. ALL COURSES GRID (with search & filter) */}
       <AllCoursesGrid />
 
-      {/* 5. COURSE CATEGORIES */}
+      {/* 4. COURSE CATEGORIES */}
       <CourseCategories />
 
-      {/* 6. WHY OUR COURSES? */}
+      {/* 5. WHY OUR COURSES? */}
       <WhyOurCourses />
 
-      {/* 7. ENROLMENT PROCESS */}
+      {/* 6. ENROLMENT PROCESS */}
       <EnrolmentProcess />
 
-      {/* 8. FAQ */}
+      {/* 7. FAQ */}
       <CoursesFAQ />
 
-      {/* 9. CALL TO ACTION */}
+      {/* 8. CALL TO ACTION */}
       <CoursesCta />
     </div>
   );
