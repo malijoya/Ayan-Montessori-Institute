@@ -36,7 +36,8 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${poppins.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-white text-slate-800">
+      {/* suppressHydrationWarning: browser extensions (e.g. Grammarly) inject attributes on <body> before hydration */}
+      <body className="min-h-full flex flex-col font-sans bg-white text-slate-800" suppressHydrationWarning>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

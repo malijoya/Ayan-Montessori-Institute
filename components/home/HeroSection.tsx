@@ -80,10 +80,14 @@ export default function HeroSection() {
               <div className="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-tr from-[#87CEEB] via-[#FFD166] to-[#2C5F8A] opacity-30 blur-lg"></div>
 
               <div className="relative rounded-3xl overflow-hidden shadow-montessori-lg border-4 border-white bg-white group">
-                <img
-                  src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200&auto=format&fit=crop"
-                  alt="Ayan Montessori Institute Classroom"
-                  className="w-full h-[380px] sm:h-[460px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                <Image
+                  src="/images/hero-img.jpg"
+                  alt="Ayan Montessori Institute teacher training workshop"
+                  width={1195}
+                  height={896}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="w-full h-[380px] sm:h-[460px] object-cover object-[30%_center] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
                 {/* Image Gradient Overlay */}

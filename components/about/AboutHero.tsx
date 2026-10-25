@@ -15,15 +15,15 @@ export default function AboutHero() {
           <div className="lg:col-span-7 space-y-6 text-left z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#87CEEB]/20 border border-[#87CEEB]/40 text-[#2C5F8A] text-xs font-semibold uppercase tracking-wider shadow-sm">
               <Sparkles className="w-4 h-4 text-[#2C5F8A] animate-spin" style={{ animationDuration: '6s' }} />
-              <span>About Ayan Montessori Institute</span>
+              <span>ABOUT AYAN MONTESSORI INSTITUTE</span>
             </div>
 
             <h1 className="font-poppins font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2C5F8A] tracking-tight leading-[1.15]">
-              Nurturing <span className="text-[#2C5F8A] underline decoration-[#FFD166] decoration-wavy decoration-4">Curious Minds</span> and Confident Learners
+              Our Journey to <span className="text-[#2C5F8A] underline decoration-[#FFD166] decoration-wavy decoration-4">You!</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-sans">
-              Founded on Maria Montessori’s timeless educational principles, Ayan Montessori Institute provides a joyful, structured, and inspiring space where children discover independence, critical thinking, and lifelong love for learning.
+              Founded on a 17+ year legacy of educational excellence, AYAN Montessori Institute is a premier teacher training institution. We provide rigorous, job-oriented diploma programs, hands-on apparatus mastery, and world-class mentorship to prepare passionate individuals for successful careers in education.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -57,7 +57,7 @@ export default function AboutHero() {
                     </div>
                     <div>
                       <span className="text-xs font-bold text-[#2C5F8A] block">Quality Montessori</span>
-                      <span className="text-[11px] text-slate-500 block">Ages 0 to 9 & Educator Diplomas</span>
+                      <span className="text-[11px] text-slate-500 block">Teacher Training & Diplomas</span>
                     </div>
                   </div>
                 </div>
@@ -69,8 +69,8 @@ export default function AboutHero() {
                   <Heart className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-[#2C5F8A] block">Child-Centered</span>
-                  <span className="text-[10px] text-slate-500">Loving & Caring Environment</span>
+                  <span className="text-xs font-bold text-[#2C5F8A] block">Job-Oriented</span>
+                  <span className="text-[10px] text-slate-500">Comprehensive Mentorship</span>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@ export default function AboutHero() {
                 </div>
                 <div>
                   <span className="text-xs font-bold text-[#2C5F8A] block">Certified Excellence</span>
-                  <span className="text-[10px] text-slate-500">10+ Years Legacy</span>
+                  <span className="text-[10px] text-slate-500">17+ Years Legacy</span>
                 </div>
               </div>
 

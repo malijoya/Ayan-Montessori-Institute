@@ -1,42 +1,71 @@
 import SectionContainer from "@/components/ui/SectionContainer";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { Award, Globe, ShieldCheck, BookOpen, GraduationCap, Building2 } from "lucide-react";
+import { Award, CheckCircle, ShieldCheck } from "lucide-react";
 
 export default function TrustedPartners() {
+  // 3 Accredited Partner slots ready for logos
   const partners = [
-    { name: "AMI Accreditation Board", type: "Accreditation", icon: Award },
-    { name: "Early Childhood Council", type: "Affiliate", icon: Globe },
-    { name: "Montessori Teacher Assoc.", type: "Partner", icon: ShieldCheck },
-    { name: "Global Pedagogy Network", type: "Collaborator", icon: BookOpen },
-    { name: "National Education Board", type: "Certification", icon: GraduationCap },
-    { name: "International Montessori Alliance", type: "Sponsor", icon: Building2 },
+    {
+      id: 1,
+      title: "Accredited Partner 1",
+      subtitle: "Recognized Montessori Body",
+      icon: Award,
+      logoUrl: null, // Replace with logo path when provided
+    },
+    {
+      id: 2,
+      title: "Accredited Partner 2",
+      subtitle: "Government & Regulatory Alignment",
+      icon: ShieldCheck,
+      logoUrl: null, // Replace with logo path when provided
+    },
+    {
+      id: 3,
+      title: "Accredited Partner 3",
+      subtitle: "International Pedagogical Standards",
+      icon: CheckCircle,
+      logoUrl: null, // Replace with logo path when provided
+    },
   ];
 
   return (
-    <SectionContainer bg="white">
+    <SectionContainer id="partners" bg="white" className="scroll-mt-20">
+      <div id="clients" className="scroll-mt-28"></div>
       <SectionHeader
-        badge="Collaborations & Credentials"
-        title="Our Trusted Partners"
-        subtitle="Recognized by leading Montessori accreditation councils, educational boards, and international institutions."
+        badge="ACCREDITATIONS & PARTNERSHIPS"
+        title="Our Accredited Partners"
+        subtitle="Proudly aligned with leading bodies to ensure world-class standards in Montessori teacher training."
       />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {partners.map((partner, idx) => {
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {partners.map((partner) => {
           const Icon = partner.icon;
           return (
             <div
-              key={idx}
-              className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-montessori hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2 group"
+              key={partner.id}
+              className="bg-white rounded-3xl p-8 border-2 border-dashed border-slate-200 hover:border-[#87CEEB] shadow-sm hover:shadow-montessori hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center space-y-4 group min-h-[180px]"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#87CEEB]/15 text-[#2C5F8A] flex items-center justify-center group-hover:bg-[#87CEEB] group-hover:text-[#2C5F8A] transition-colors">
-                <Icon className="w-6 h-6" />
-              </div>
-              <span className="font-poppins font-bold text-xs text-[#2C5F8A] leading-tight block">
-                {partner.name}
-              </span>
-              <span className="text-[10px] text-slate-400 font-semibold uppercase">
-                {partner.type}
-              </span>
+              {partner.logoUrl ? (
+                <img
+                  src={partner.logoUrl}
+                  alt={partner.title}
+                  className="max-h-16 max-w-full object-contain filter group-hover:brightness-105 transition-all"
+                />
+              ) : (
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-16 h-16 rounded-2xl bg-[#87CEEB]/15 text-[#2C5F8A] flex items-center justify-center group-hover:bg-[#87CEEB] group-hover:text-[#2C5F8A] transition-all">
+                    <Icon className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <span className="font-poppins font-bold text-base text-[#2C5F8A] block">
+                      {partner.title}
+                    </span>
+                    <span className="text-xs text-slate-400 font-medium">
+                      {partner.subtitle}
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
           );
         })}

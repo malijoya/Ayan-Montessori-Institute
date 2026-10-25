@@ -1,43 +1,43 @@
 import SectionContainer from "@/components/ui/SectionContainer";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { Heart, Sparkles, Compass, ShieldCheck, Users, BookOpen } from "lucide-react";
+import { Award, Sparkles, Compass, ShieldCheck, Users, BookOpen } from "lucide-react";
 
 export default function CoreValues() {
   const values = [
     {
-      icon: Heart,
-      title: "Respect",
-      description: "Treating every child, parent, and educator with deep dignity, empathy, and unconditional positive regard.",
+      icon: Award,
+      title: "Pedagogical Rigor",
+      description: "Upholding authentic Maria Montessori methodologies through deep academic discipline, structured curricula, and professional standards.",
       color: "bg-[#87CEEB]/20 text-[#2C5F8A] border-[#87CEEB]/40",
     },
     {
       icon: Sparkles,
-      title: "Creativity",
-      description: "Encouraging imaginative expression, artistic exploration, and original problem-solving in every classroom.",
+      title: "Practical Mastery",
+      description: "Bridging theory and execution by ensuring every trainee gains hands-on confidence with real Montessori apparatus and classroom management labs.",
       color: "bg-[#FFD166]/30 text-[#8F6500] border-[#FFD166]",
     },
     {
       icon: Compass,
-      title: "Independence",
-      description: "Fostering self-reliance, freedom of choice within boundaries, and personal responsibility from early childhood.",
+      title: "Professional Growth",
+      description: "Equipping educators and career switchers with 100% job-oriented skills, leadership confidence, and sustainable career pathways.",
       color: "bg-[#2C5F8A]/10 text-[#2C5F8A] border-[#2C5F8A]/30",
     },
     {
       icon: ShieldCheck,
-      title: "Integrity",
-      description: "Upholding high ethical standards, transparency, and authentic Montessori principles in all our programs.",
+      title: "Integrity & Transparency",
+      description: "Maintaining absolute honesty, clear communication, and ethical leadership across all our online, on-campus, and in-house training programs.",
       color: "bg-[#FFD166]/30 text-[#8F6500] border-[#FFD166]",
     },
     {
       icon: Users,
-      title: "Collaboration",
-      description: "Building strong partnerships between teachers, parents, and trainees to support holistic child growth.",
+      title: "Dedicated Mentorship",
+      description: "Fostering a supportive, interactive community where expert master trainers guide trainees every step of the way.",
       color: "bg-[#87CEEB]/20 text-[#2C5F8A] border-[#87CEEB]/40",
     },
     {
       icon: BookOpen,
-      title: "Lifelong Learning",
-      description: "Inspiring a natural, joyful curiosity that drives children and educators to continuously grow and discover.",
+      title: "Lifelong Development",
+      description: "Continuously adapting our training modules to meet modern educational demands, digital tools, and evolving global school standards.",
       color: "bg-[#2C5F8A]/10 text-[#2C5F8A] border-[#2C5F8A]/30",
     },
   ];
@@ -45,9 +45,9 @@ export default function CoreValues() {
   return (
     <SectionContainer bg="white">
       <SectionHeader
-        badge="Guided Principles"
+        badge="GUIDED PRINCIPLES"
         title="Our Core Values"
-        subtitle="The core beliefs that shape our daily interaction with children, parents, and teacher trainees."
+        subtitle="The foundational principles that drive our commitment to professional teacher training, academic rigor, and educator success."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -14,7 +14,7 @@ export default function MissionVision() {
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">Our Purpose</span>
           <h3 className="font-poppins font-bold text-2xl text-[#2C5F8A]">Our Mission</h3>
           <p className="text-sm text-slate-600 leading-relaxed font-sans">
-            To provide an authentic, holistic, and nurturing Montessori educational experience that respects each child's unique developmental timeline. We strive to cultivate independent thinkers, creative problem solvers, and compassionate global citizens through hands-on learning and dedicated teacher training.
+            To bridge the gap between early childhood philosophy and real-world classroom execution by delivering rigorous, job-oriented Montessori teacher training. We empower aspiring educators and school professionals with elite pedagogical skills, hands-on apparatus mastery, and practical mentorship to transform classrooms nationwide.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export default function MissionVision() {
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">Our Future</span>
           <h3 className="font-poppins font-bold text-2xl text-[#2C5F8A]">Our Vision</h3>
           <p className="text-sm text-slate-600 leading-relaxed font-sans">
-            To be recognized as a premier center of excellence in early childhood Montessori education and professional teacher training across the region. We envision a world where every child receives the foundation to reach their highest cognitive, social, and emotional potential.
+            To be recognized as the premier center of excellence in professional teacher development and Montessori education across the region. We envision a thriving network of expert educators equipped to unlock the highest cognitive, social, and emotional potential in every generation of children.
           </p>
         </div>
 

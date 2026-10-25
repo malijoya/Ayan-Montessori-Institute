@@ -3,7 +3,7 @@ import { Quote, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function OurStory() {
   return (
-    <SectionContainer bg="white">
+    <SectionContainer id="who-we-are" bg="white" className="scroll-mt-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* LEFT: Large Image */}
@@ -36,11 +36,20 @@ export default function OurStory() {
           </h2>
 
           <p className="text-base text-slate-600 leading-relaxed font-sans">
-            Ayan Montessori Institute was established with a singular vision: to create an authentic Montessori environment where children are empowered to explore, discover, and learn at their own natural pace. What started as a dedicated early learning center has expanded into a premiere institute offering both early childhood education and internationally recognized Montessori Teacher Training diplomas.
+            AYAN Montessori Institute, a project of Saach Consultant ® registered with the Registrar of Firms, Islamabad (Registration No. RDF. 303), is a leading Montessori Teacher Training Institute in Pakistan, established in 2010.
           </p>
 
           <p className="text-base text-slate-600 leading-relaxed font-sans">
-            We believe that every child possesses an innate drive to learn. By providing scientifically designed Montessori materials, child-proportioned practical stations, and compassionate master educators, we help children develop concentration, spatial reasoning, emotional intelligence, and self-confidence.
+            It was founded to meet the growing demand for professionally trained Montessori educators across the country. Our program prepares participants to effectively educate and nurture young minds using Montessori principles, applicable to preschoolers aged 2 ½ to 6 years worldwide. We take pride in being the sole institute in Pakistan offering comprehensive Montessori Teacher Training long courses online, conducted live on Zoom with Live Question &amp; answer + class recordings, available on our YouTube channel{" "}
+            <a
+              href="https://www.youtube.com/@AyanMontessori"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2C5F8A] underline font-semibold hover:text-[#87CEEB] transition-colors"
+            >
+              https://www.youtube.com/@AyanMontessori
+            </a>{" "}
+            for review and deeper understanding + Notes in PDF + What’s app group + Online Exam System for students living in distant areas of Pakistan and abroad.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-semibold text-[#2C5F8A] pt-2">
